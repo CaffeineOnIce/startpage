@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<!--Starpage by -->
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>~</title>
+	<link rel="stylesheet" style="text/css" href="general.css" />
+</head>
+
+<body>
+	<div class="main" id="main1" style="display: block">
+		<div class="image-wrapper">
+
+			<div class="mySlides fade">
+				<img src="img/side1.gif">
+			</div>
+
+			<div class="mySlides fade">
+				<img src="img/side2.gif">
+			</div>
+
+			<div class="mySlides fade">
+				<img src="img/side3.gif">
+			</div>
+
+			<div class="mySlides fade">
+				<img src="img/side4.gif">
+			</div>
+
+			<div class="mySlides fade">
+				<img src="img/side5.gif">
+			</div>
+
+			<div class="mySlides fade">
+				<img src="img/side6.gif">
+			</div>
+
+			<div class="mySlides fade">
+				<img src="img/side7.gif">
+			</div>
+
+			<div class="mySlides fade">
+				<img src="img/side8.gif">
+			</div>
+
+			<div class="mySlides fade">
+				<img src="img/side9.gif">
+			</div>
+
+
+			<a class="next" onclick="plusSlides(1)">&#8734;</a>
+
+		</div>
+		<br>
+
+		<div style="text-align:center">
+			<span class="reqdVar" onclick="currentSlide(1)"></span>
+			<span class="reqdVar" onclick="currentSlide(2)"></span>
+			<span class="reqdVar" onclick="currentSlide(3)"></span>
+			<span class="reqdVar" onclick="currentSlide(4)"></span>
+			<span class="reqdVar" onclick="currentSlide(5)"></span>
+			<span class="reqdVar" onclick="currentSlide(6)"></span>
+			<span class="reqdVar" onclick="currentSlide(7)"></span>
+			<span class="reqdVar" onclick="currentSlide(8)"></span>
+			<span class="reqdVar" onclick="currentSlide(9)"></span>
+		</div>
+
+
+		<header>
+			<br>
+			<h1>いらっしゃいませ, <span class="flair">X A M P</span></h1>
+		</header>
+
+		<nav>
+			<br>
+				<ul class="blue">
+				<a style="font-size:22px">Social</a>
+				<li><a href="https://www.fb.com/">Facebook</a></li>
+				<li><a href="https://www.youtube.com">Youtube</a></li>
+				<li><a href="https://reddit.com/">Reddit</a></li>
+				<li><a href="https://web.whatsapp.com/">Whatsapp</a></li>
+				<li><a href="https://twitter.com/">Twitter</a></li>
+			</ul>
+
+			<ul class="green">
+				<a style="font-size:22px">Study</a>
+				<li><a href="https://kotlinlang.org/docs/reference/">Kotlin</a></li>
+				<li><a href="http://github.com/">Github</a></li>
+			</ul>
+
+			<ul class="red">
+				<a style="font-size:22px">Anime</a>
+				<li><a href="https://Kissanime.ru/">Kissanime</a></li>
+				<li><a href="https://9anime.to/">9anime</a></li>
+				<li><a href="https://gogoanime.io/">Gogoanime</a></li>
+				<li><a href="https://myanimelist.net/">MyAnimeList</a></li>
+				<li><a href="https://pixiv.net/">Pixiv</a></li>
+				<li><a href="https://nyaa.si/">Nyaa</a></li>
+
+			</ul>
+
+			<ul class="yellow">
+				<a style="font-size:22px">Else</a>
+				<li><a href="https://filebin.net/">Filebin</a></li>
+				<li><a href="https://gmail.com/">Gmail</a></li>
+				<li><a href="https://amazon.in">Amazon</a></li>
+				<li><a href="https://katcr.to/">Katcr</a></li>
+				<li><a href="https://1337x.to/">1337x</a></li>
+				<li><a href="https://chiasenhac.vn/">Chiasenhac</a></li>
+			</ul>
+
+		</nav>
+		<!--Live clock script-->
+		<div class="time" id="time">
+			<script>
+			//document.getElementById("main").innerHTML = Date();
+			function updateClock() {
+				var days = ['SUNDAY','MONDAY','TUESDAY','WEDNESDAY','THURSDAY','FRIDAY','SATURDAY'];
+				var m = new Date();
+				var dateString =
+				(days[ m.getDay() ]) + " " +
+				("0" + m.getDate()).slice(-2) + "/" +
+				("0" + (m.getMonth()+1)).slice(-2) +"/"+
+				m.getFullYear() +" "+
+				("0" + m.getHours()).slice(-2) + ":" +
+				("0" + m.getMinutes()).slice(-2) + ":" +
+				("0" + m.getSeconds()).slice(-2);
+
+				// set the content of the element with the ID time to the formatted string
+				document.getElementById('time').innerHTML = dateString;
+
+				// call this function again in 1000ms
+				setTimeout(updateClock, 1000);
+			}
+			updateClock(); // initial call
+
+			// Set local storage
+			var slideIx = Number(localStorage.getItem('slideIndex') || 1);
+
+			var slideIndex = slideIx;
+			showSlides(slideIndex);
+
+			// Next/previous controls
+			function plusSlides(n) {
+				showSlides(slideIndex += n);
+				localStorage.setItem('slideIndex', slideIndex);
+				console.log(localStorage.getItem('slideIndex'));
+			}
+
+			// Thumbnail image controls
+			function currentSlides(n) {
+				showSlides(slideIndex = n);
+				localStorage.setItem('slideIndex', slideIndex);
+				console.log(localStorage.getItem('slideIndex'));
+			}
+
+			// Show slides
+			function showSlides(n) {
+				var i;
+				var slides = document.getElementsByClassName("mySlides");
+				var reqdVars = document.getElementsByClassName("reqdVar");
+				if (n > slides.length) {
+					slideIndex = 1;
+				}
+				if (n < 1) {
+					slideIndex = slides.length;
+				}
+				for (i = 0; i < slides.length; i++) {
+					slides[i].style.display = "none";
+				}
+				for (i = 0; i < reqdVars.length; i++) {
+					reqdVars[i].className = reqdVars[i].className.replace(" active", "");
+				}
+				slides[slideIndex-1].style.display = "block";
+				reqdVars[slideIndex-1].className += " active";
+			}
+
+			</script>
+		</div>
