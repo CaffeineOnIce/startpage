@@ -8,7 +8,7 @@
 </head>
 
 <body>
-	<div class="main" id="main1" style="display: block">
+	<div class="main" style="display: block">
 		<div class="image-wrapper">
 
 			<div class="mySlides fade">
@@ -47,9 +47,7 @@
 				<img src="img/side9.gif">
 			</div>
 
-
 			<a class="next" onclick="plusSlides(1)">&#8734;</a>
-
 		</div>
 		<br>
 
@@ -65,7 +63,6 @@
 			<span class="reqdVar" onclick="currentSlide(9)"></span>
 		</div>
 
-
 		<header>
 			<br>
 			<h1>いらっしゃいませ, <span class="flair">X A M P</span></h1>
@@ -73,7 +70,7 @@
 
 		<nav>
 			<br>
-				<ul class="blue">
+			<ul class="blue">
 				<a style="font-size:22px">Social</a>
 				<li><a href="https://www.fb.com/">Facebook</a></li>
 				<li><a href="https://www.youtube.com">Youtube</a></li>
@@ -96,7 +93,6 @@
 				<li><a href="https://myanimelist.net/">MyAnimeList</a></li>
 				<li><a href="https://pixiv.net/">Pixiv</a></li>
 				<li><a href="https://nyaa.si/">Nyaa</a></li>
-
 			</ul>
 
 			<ul class="yellow">
@@ -108,10 +104,10 @@
 				<li><a href="https://1337x.to/">1337x</a></li>
 				<li><a href="https://chiasenhac.vn/">Chiasenhac</a></li>
 			</ul>
-
 		</nav>
 		<!--Live clock script-->
-		<div class="time" id="time">
+
+		<div class="codes" id="codes">
 			<script>
 			//document.getElementById("main").innerHTML = Date();
 			function updateClock() {
@@ -126,8 +122,8 @@
 				("0" + m.getMinutes()).slice(-2) + ":" +
 				("0" + m.getSeconds()).slice(-2);
 
-				// set the content of the element with the ID time to the formatted string
-				document.getElementById('time').innerHTML = dateString;
+				// set the content of the element with the ID codes to the formatted string
+				document.getElementById('codes').innerHTML = dateString;
 
 				// call this function again in 1000ms
 				setTimeout(updateClock, 1000);
