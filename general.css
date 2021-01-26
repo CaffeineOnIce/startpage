@@ -13,7 +13,7 @@ body {
   height: 320px;
   position: absolute;
   top: 0px;
-  bottom:100px;
+  bottom: 100px;
   left: 0px;
   right: 0px;
   margin: auto;
@@ -68,6 +68,25 @@ img {
   height: 600px;
 }
 
+.hash {
+  text-decoration: none;
+  cursor: pointer;
+  position: absolute;
+  bottom: 560px;
+  width: auto;
+  left: 10px;
+  padding: 5px;
+  margin-top: 25px;
+  color: white;
+  font-weight: bold;
+  font-size: 25px;
+  transition: 0.6s ease;
+  user-select: none;
+  border-radius: 3px 0 0 3px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
 .next {
   cursor: pointer;
   position: absolute;
@@ -84,10 +103,6 @@ img {
   border-radius: 3px 0 0 3px;
   border-radius: 50%;
   display: inline-block;
-}
-
-.next:hover {
-  background-color: #AARRGGBB;
 }
 
 .fade {
