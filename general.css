@@ -1,5 +1,5 @@
 @font-face {
-  font-family:'Iosevka';
+  font-family: 'Iosevka';
   src: url('Iosevka.ttf');
 }
 
@@ -24,7 +24,6 @@ h1 {
   color: #FEFFFA;
   position: relative;
   text-align: center;
-  horizontal-align: middle;
 }
 
 .flair {
@@ -94,13 +93,23 @@ img {
 }
 
 @-webkit-keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
+  from {
+    opacity: .4
+  }
+
+  to {
+    opacity: 1
+  }
 }
 
 @keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
+  from {
+    opacity: .4
+  }
+
+  to {
+    opacity: 1
+  }
 }
 
 .codes {
@@ -121,11 +130,10 @@ li {
 nav {
   display: inline-block;
   vertical-align: middle;
-  horizontal-align: middle;
   color: #BFBFBF;
   font-size: 20px;
   text-align: center;
-  left= 50%;
+  left=50%;
   margin-left: auto;
   margin-right: auto;
   position: relative;
@@ -133,7 +141,6 @@ nav {
 
 ul {
   display: table-cell;
-  horizontal-align: middle;
   text-align: center;
   height: 100%;
   border-color: #232328;
@@ -153,32 +160,32 @@ ul:hover {
   color: #FFFFFF;
 }
 
-ul > li:first-of-type{
+ul>li:first-of-type {
   padding-top: 5px;
 }
 
-ul > li > a {
-  text-decoration:none;
+ul>li>a {
+  text-decoration: none;
   color: #adadad;
   transition: all 0.8s;
 }
 
-ul[class=green] > li > a:hover {
+ul[class=green]>li>a:hover {
   color: #4FAE0F;
   transition: all 0.5s;
 }
 
-ul[class=blue] > li > a:hover {
+ul[class=blue]>li>a:hover {
   color: #0972D6;
   transition: all 0.5s;
 }
 
-ul[class=red] > li > a:hover {
+ul[class=red]>li>a:hover {
   color: #ed3434;
   transition: all 0.5s;
 }
 
-ul[class=yellow] > li > a:hover {
+ul[class=yellow]>li>a:hover {
   color: #edd934;
   transition: all 0.5s;
 }
