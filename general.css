@@ -12,17 +12,16 @@ body {
   width: 670px;
   height: 320px;
   position: absolute;
-  top: 0px;
+  top: 0;
   bottom: 100px;
-  left: 0px;
-  right: 0px;
+  left: 0;
+  right: 0;
   margin: auto;
 }
 
 h1 {
   font-weight: normal;
   color: #FEFFFA;
-  position: relative;
   text-align: center;
 }
 
@@ -32,31 +31,26 @@ h1 {
 
 .main {
   display: inline-block;
-  border-style: solid;
-  border-width: 1px;
-  border-color: #232328;
+  border: 1px solid #232328;
   position: relative;
   top: -100px;
   width: 770px;
   height: 600px;
   left: -200px;
-  right: 0px;
   margin: auto;
   background-color: #18181D;
   text-align: center;
 }
 
 .image-wrapper {
-  border-style: solid;
-  border-width: 1px;
-  border-color: #232328;
+  border: 1px solid #232328;
   position: absolute;
   top: -1px;
   width: 300px;
   height: 600px;
   left: 770px;
   background-color: #18181D;
-  background-position: center center;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -71,61 +65,36 @@ img {
   cursor: pointer;
   position: absolute;
   top: 575px;
-  width: auto;
   right: 10px;
   padding: 5px;
   margin-top: -22px;
   color: white;
   font-weight: bold;
   font-size: 30px;
+  border-radius: 50%;
   transition: 0.6s ease;
   user-select: none;
-  border-radius: 3px 0 0 3px;
-  border-radius: 50%;
-  display: inline-block;
 }
 
 .fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@-webkit-keyframes fade {
-  from {
-    opacity: .4
-  }
-
-  to {
-    opacity: 1
-  }
+  animation: fade 1.5s;
 }
 
 @keyframes fade {
-  from {
-    opacity: .4
-  }
-
-  to {
-    opacity: 1
-  }
+  from { opacity: .4; }
+  to { opacity: 1; }
 }
 
 .codes {
   color: #FFFFFF;
-  font-family: Iosevka, monospace;
+  font-family: 'Iosevka', monospace;
   font-size: 18px;
   position: absolute;
   top: 565px;
-  width: auto;
-  height: auto;
   left: 12px;
 }
 
-li {
-  margin: 10px 0;
-}
+li { margin: 10px 0; }
 
 nav {
   display: inline-block;
@@ -133,58 +102,33 @@ nav {
   color: #BFBFBF;
   font-size: 20px;
   text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
+  margin: 0 auto;
 }
 
 ul {
   display: table-cell;
   text-align: center;
   height: 100%;
-  border-color: #232328;
-  border-right-width: 1px;
-  border-right-style: solid;
   padding: 10px 25px;
-  transition: all 0.8s;
-  cursor: default;
   list-style-type: none;
+  border-right: 1px solid #232328;
+  transition: color 0.8s;
+  cursor: default;
 }
 
-ul:last-of-type {
-  border-right-width: 0;
-}
+ul:last-of-type { border-right: none; }
 
-ul:hover {
-  color: #FFFFFF;
-}
+ul:hover { color: #FFFFFF; }
 
-ul>li:first-of-type {
-  padding-top: 5px;
-}
+ul > li:first-of-type { padding-top: 5px; }
 
-ul>li>a {
+ul > li > a {
   text-decoration: none;
   color: #adadad;
-  transition: all 0.8s;
+  transition: color 0.8s;
 }
 
-ul[class=green]>li>a:hover {
-  color: #4FAE0F;
-  transition: all 0.5s;
-}
-
-ul[class=blue]>li>a:hover {
-  color: #0972D6;
-  transition: all 0.5s;
-}
-
-ul[class=red]>li>a:hover {
-  color: #ed3434;
-  transition: all 0.5s;
-}
-
-ul[class=yellow]>li>a:hover {
-  color: #edd934;
-  transition: all 0.5s;
-}
+ul.green > li > a:hover { color: #4FAE0F; }
+ul.blue > li > a:hover { color: #0972D6; }
+ul.red > li > a:hover { color: #ed3434; }
+ul.yellow > li > a:hover { color: #edd934; }

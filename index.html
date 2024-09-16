@@ -1,245 +1,127 @@
 <!DOCTYPE html>
-<!--Starpage by -->
-<html>
+<html lang="en">
+
 <head>
 	<meta charset="utf-8">
 	<title>~</title>
+	<link rel="icon" type="image/x-icon" href="assets/favicon.svg">
 	<link rel="stylesheet" href="general.css">
 </head>
+
 <body>
-	<div class="main" style="display: block">
+	<div class="main">
 		<div class="image-wrapper">
-
-			<div class="mySlides fade">
-				<img src="img/side1.gif">
-			</div>
-
-			<div class="mySlides fade">
-				<img src="img/side2.gif">
-			</div>
-
-			<div class="mySlides fade">
-				<img src="img/side3.gif">
-			</div>
-
-			<div class="mySlides fade">
-				<img src="img/side4.gif">
-			</div>
-
-			<div class="mySlides fade">
-				<img src="img/side5.gif">
-			</div>
-
-			<div class="mySlides fade">
-				<img src="img/side6.gif">
-			</div>
-
-			<div class="mySlides fade">
-				<img src="img/side7.gif">
-			</div>
-
-			<div class="mySlides fade">
-				<img src="img/side8.gif">
-			</div>
-
-			<div class="mySlides fade">
-				<img src="img/side9.gif">
-			</div>
-
-			<div class="mySlides fade">
-				<img src="img/side10.gif">
-			</div>
-
-			<div class="mySlides fade">
-				<img src="img/side11.gif">
-			</div>
-
-			<div class="mySlides fade">
-				<img src="img/side12.gif">
-			</div>
-
-			<div class="mySlides fade">
-				<img src="img/side13.gif">
-			</div>
-
-			<div class="mySlides fade">
-				<img src="img/side14.gif">
-			</div>
-
-			<div class="mySlides fade">
-				<img src="img/side15.gif">
-			</div>
-
-			<div class="mySlides fade">
-				<img src="img/side16.gif">
-			</div>
-
-			<div class="mySlides fade">
-				<img src="img/side17.gif">
-			</div>
-
-			<div class="mySlides fade">
-				<img src="img/side18.gif">
-			</div>
-
-			<div class="mySlides fade">
-				<img src="img/side19.gif">
-			</div>
-
-			<div class="mySlides fade">
-				<img src="img/side20.gif">
-			</div>
-
-			<div class="mySlides fade">
-				<img src="img/side21.gif">
-			</div>
-
-			<div class="mySlides fade">
-				<img src="img/side22.gif">
-			</div>
-
-
-			<div class="mySlides fade">
-				<img src="img/side23.gif">
-			</div>
-
-
-			<a class="next" onclick="plusSlides(1)">&#8734;</a>
+			<div id="slideshow"></div>
 		</div>
 		<br>
-
-		<div style="text-align:center">
-			<span class="reqdVar" onclick="currentSlide(1)"></span>
-			<span class="reqdVar" onclick="currentSlide(2)"></span>
-			<span class="reqdVar" onclick="currentSlide(3)"></span>
-			<span class="reqdVar" onclick="currentSlide(4)"></span>
-			<span class="reqdVar" onclick="currentSlide(5)"></span>
-			<span class="reqdVar" onclick="currentSlide(6)"></span>
-			<span class="reqdVar" onclick="currentSlide(7)"></span>
-			<span class="reqdVar" onclick="currentSlide(8)"></span>
-			<span class="reqdVar" onclick="currentSlide(9)"></span>
-			<span class="reqdVar" onclick="currentSlide(10)"></span>
-			<span class="reqdVar" onclick="currentSlide(11)"></span>
-			<span class="reqdVar" onclick="currentSlide(12)"></span>
-			<span class="reqdVar" onclick="currentSlide(13)"></span>
-			<span class="reqdVar" onclick="currentSlide(14)"></span>
-			<span class="reqdVar" onclick="currentSlide(15)"></span>
-			<span class="reqdVar" onclick="currentSlide(16)"></span>
-			<span class="reqdVar" onclick="currentSlide(17)"></span>
-			<span class="reqdVar" onclick="currentSlide(18)"></span>
-			<span class="reqdVar" onclick="currentSlide(19)"></span>
-			<span class="reqdVar" onclick="currentSlide(20)"></span>
-			<span class="reqdVar" onclick="currentSlide(21)"></span>
-			<span class="reqdVar" onclick="currentSlide(22)"></span>
-			<span class="reqdVar" onclick="currentSlide(23)"></span>
-		</div>
+		<div style="text-align:center" id="dots"></div>
 
 		<header>
 			<br>
 			<h1>おかえりなさいませ, <span class="flair">X A M P</span></h1>
 		</header>
-
+		<br>
+		<br>
 		<nav>
-			<br>
 			<ul class="blue">
 				<a style="font-size:22px">Social</a>
 				<li><a href="https://www.facebook.com/">Facebook</a></li>
-				<li><a href="https://www.youtube.com/">Youtube</a></li>
+				<li><a href="https://www.youtube.com/">YouTube</a></li>
 				<li><a href="https://www.reddit.com/">Reddit</a></li>
 				<li><a href="https://www.x.com/">X</a></li>
-			</ul>
-
-			<ul class="green">
-				<a style="font-size:22px">Study</a>
-				<li><a href="https://github.com/">Github</a></li>
-				<li><a href="https://classroom.google.com/">G-Classroom</a></li>
-				<li><a href="https://meet.google.com/">G-Meet</a></li>
-				<li><a href="https://javascript.info/">Javascript</a></li>
-				<li><a href="https://kotlinlang.org/docs/home.html">Kotlin</a></li>
 			</ul>
 
 			<ul class="red">
 				<a style="font-size:22px">Anime</a>
 				<li><a href="https://anitaku.pe/home.html">Gogoanime</a></li>
+				<li><a href="https://www.animegg.org/">AnimeGG</a></li>
 				<li><a href="https://myanimelist.net/">MyAnimeList</a></li>
-				<li><a href="https://pixiv.net/">Pixiv</a></li>
 				<li><a href="https://nyaa.si/">Nyaa</a></li>
 			</ul>
 
-			<ul class="yellow">
-				<a style="font-size:22px">Else</a>
+			<ul class="green">
+				<a style="font-size:22px">Pirate</a>
+				<li><a href="https://www.bitsearch.to/">Bitsearch</a></li>
+				<li><a href="https://torrentbay.st/">Torrent Bay</a></li>
+				<li><a href="https://yts.torrentbay.st/">YTS</a></li>
 				<li><a href="https://filecr.com/">FileCR</a></li>
-				<li><a href="https://gmail.com/">Gmail</a></li>
+			</ul>
+
+			<ul class="yellow">
+				<a style="font-size:22px">Misc</a>
 				<li><a href="https://amazon.in">Amazon</a></li>
-				<li><a href="https://1337x.to/">1337x</a></li>
+				<li><a href="https://github.com/">Github</a></li>
+				<li><a href="https://gmail.com/">Gmail</a></li>
 				<li><a href="https://drive.google.com/drive/home">Drive</a></li>
+				<li><a href="https://meet.google.com/">G-Meet</a></li>
 			</ul>
 		</nav>
 
-		<div class="codes" id="codes">
-			<script>
-			//document.getElementById("main").innerHTML = Date();
-			function updateClock() {
-				var days = ['SUNDAY','MONDAY','TUESDAY','WEDNESDAY','THURSDAY','FRIDAY','SATURDAY'];
-				var m = new Date();
-				var dateString =
-				(days[ m.getDay() ]) + " " +
-				("0" + m.getDate()).slice(-2) + "/" +
-				("0" + (m.getMonth()+1)).slice(-2) +"/"+
-				m.getFullYear() +" "+
-				("0" + m.getHours()).slice(-2) + ":" +
-				("0" + m.getMinutes()).slice(-2) + ":" +
-				("0" + m.getSeconds()).slice(-2);
+		<div class="codes" id="codes"></div>
 
-				// set the content of the element with the ID codes to the formatted string
-				document.getElementById('codes').innerHTML = dateString;
+		<script>
+			const imagePath = 'assets/';
+			const images = [
+				'side1.gif', 'side2.gif', 'side3.gif', 'side4.gif', 'side5.gif',
+				'side6.gif', 'side7.gif', 'side8.gif', 'side9.gif', 'side10.gif',
+				'side11.gif', 'side12.gif', 'side13.gif', 'side14.gif', 'side15.gif',
+				'side16.gif', 'side17.gif', 'side18.gif', 'side19.gif', 'side20.gif',
+				'side21.gif', 'side22.gif', 'side23.gif'
+			];
 
-				// call this function again in 1000ms
-				setTimeout(updateClock, 1000);
-			}
-			updateClock(); // initial call
+			const slideshow = document.getElementById('slideshow');
+			const dots = document.getElementById('dots');
 
-			// Set local storage
-			var slideIx = Number(localStorage.getItem('slideIndex') || 1);
+			images.forEach((img, index) => {
+				const slide = document.createElement('div');
+				slide.className = 'mySlides fade';
+				slide.innerHTML = `<a onclick="plusSlides(1)"><img src="${imagePath}${img}" alt="Slide ${index + 1}" style="cursor:pointer;"></a>`;
+				slideshow.appendChild(slide);
 
-			var slideIndex = slideIx;
+				const dot = document.createElement('span');
+				dot.className = 'reqdVar';
+				dot.setAttribute('onclick', `currentSlide(${index + 1})`);
+				dots.appendChild(dot);
+			});
+
+			let slideIndex = Number(localStorage.getItem('slideIndex') || 1);
 			showSlides(slideIndex);
 
-			// Next/previous controls
 			function plusSlides(n) {
 				showSlides(slideIndex += n);
 				localStorage.setItem('slideIndex', slideIndex);
-				console.log(localStorage.getItem('slideIndex'));
 			}
 
-			// Thumbnail image controls
-			function currentSlides(n) {
+			function currentSlide(n) {
 				showSlides(slideIndex = n);
 				localStorage.setItem('slideIndex', slideIndex);
-				console.log(localStorage.getItem('slideIndex'));
 			}
 
-			// Show slides
 			function showSlides(n) {
-				var i;
-				var slides = document.getElementsByClassName("mySlides");
-				var reqdVars = document.getElementsByClassName("reqdVar");
-				if (n > slides.length) {
-					slideIndex = 1;
-				}
-				if (n < 1) {
-					slideIndex = slides.length;
-				}
-				for (i = 0; i < slides.length; i++) {
-					slides[i].style.display = "none";
-				}
-				for (i = 0; i < reqdVars.length; i++) {
-					reqdVars[i].className = reqdVars[i].className.replace(" active", "");
-				}
-				slides[slideIndex-1].style.display = "block";
-				reqdVars[slideIndex-1].className += " active";
+				const slides = document.getElementsByClassName("mySlides");
+				const reqdVars = document.getElementsByClassName("reqdVar");
+
+				if (n > slides.length) slideIndex = 1;
+				if (n < 1) slideIndex = slides.length;
+
+				Array.from(slides).forEach(slide => slide.style.display = "none");
+				Array.from(reqdVars).forEach(dot => dot.className = dot.className.replace(" active", ""));
+
+				slides[slideIndex - 1].style.display = "block";
+				reqdVars[slideIndex - 1].className += " active";
 			}
-			</script>
-		</div>
-	</body>
-	</html>
+
+			function updateClock() {
+				const days = ['SUNDAY', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY'];
+				const m = new Date();
+				const dateString = `${days[m.getDay()]} ${("0" + m.getDate()).slice(-2)}/${("0" + (m.getMonth() + 1)).slice(-2)}/${m.getFullYear()} ${("0" + m.getHours()).slice(-2)}:${("0" + m.getMinutes()).slice(-2)}:${("0" + m.getSeconds()).slice(-2)}`;
+				document.getElementById('codes').innerHTML = dateString;
+				setTimeout(updateClock, 1000);
+			}
+
+			updateClock();
+		</script>
+	</div>
+</body>
+
+</html>
