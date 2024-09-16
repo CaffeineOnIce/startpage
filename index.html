@@ -14,7 +14,7 @@
 			<div id="slideshow"></div>
 		</div>
 		<br>
-		<div style="text-align:center" id="dots"></div>
+		<div id="dots" style="text-align:center"></div>
 
 		<header>
 			<br>
@@ -24,7 +24,7 @@
 		<br>
 		<nav>
 			<ul class="blue">
-				<a style="font-size:22px;font-weight: bold;">Social</a>
+				<a class="nav-title">Social</a>
 				<li><a href="https://www.facebook.com/">Facebook</a></li>
 				<li><a href="https://www.youtube.com/">YouTube</a></li>
 				<li><a href="https://www.reddit.com/">Reddit</a></li>
@@ -32,7 +32,7 @@
 			</ul>
 
 			<ul class="red">
-				<a style="font-size:22px;font-weight: bold;">Anime</a>
+				<a class="nav-title">Anime</a>
 				<li><a href="https://anitaku.pe/home.html">Gogoanime</a></li>
 				<li><a href="https://www.animegg.org/">AnimeGG</a></li>
 				<li><a href="https://myanimelist.net/">MyAnimeList</a></li>
@@ -40,7 +40,7 @@
 			</ul>
 
 			<ul class="green">
-				<a style="font-size:22px;font-weight: bold;">Pirate</a>
+				<a class="nav-title">Pirate</a>
 				<li><a href="https://www.bitsearch.to/">Bitsearch</a></li>
 				<li><a href="https://torrentbay.st/">Torrent Bay</a></li>
 				<li><a href="https://yts.torrentbay.st/">YTS</a></li>
@@ -48,7 +48,7 @@
 			</ul>
 
 			<ul class="yellow">
-				<a style="font-size:22px;font-weight: bold;">Misc</a>
+				<a class="nav-title">Misc</a>
 				<li><a href="https://drive.filen.io/">Filen</a></li>
 				<li><a href="https://github.com/">Github</a></li>
 				<li><a href="https://amazon.in">Amazon</a></li>
@@ -60,22 +60,16 @@
 
 		<script>
 			const imagePath = 'assets/';
-			const images = [
-				'side1.gif', 'side2.gif', 'side3.gif', 'side4.gif', 'side5.gif',
-				'side6.gif', 'side7.gif', 'side8.gif', 'side9.gif', 'side10.gif',
-				'side11.gif', 'side12.gif', 'side13.gif', 'side14.gif', 'side15.gif',
-				'side16.gif', 'side17.gif', 'side18.gif', 'side19.gif', 'side20.gif',
-				'side21.gif', 'side22.gif', 'side23.gif'
-			];
+			const images = Array.from({ length: 23 }, (_, i) => `side${i + 1}.gif`);
+			let slideIndex = Number(localStorage.getItem('slideIndex')) || 1;
 
 			const slideshow = document.getElementById('slideshow');
 			const dots = document.getElementById('dots');
-			let slideIndex = Number(localStorage.getItem('slideIndex') || 1);
 
 			images.forEach((img, index) => {
 				const slide = document.createElement('div');
 				slide.className = 'mySlides fade';
-				slide.innerHTML = `<a onclick="changeSlide(1)"><img src="${imagePath}${img}" alt="Slide ${index + 1}" style="cursor:pointer;"></a>`;
+				slide.innerHTML = `<img src="${imagePath}${img}" alt="Slide ${index + 1}" style="cursor:pointer;" onclick="changeSlide(1)">`;
 				slideshow.appendChild(slide);
 
 				const dot = document.createElement('span');
@@ -105,8 +99,8 @@
 
 			function updateClock() {
 				const days = ['SUNDAY', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY'];
-				const m = new Date();
-				const dateString = `${days[m.getDay()]} ${m.getDate().toString().padStart(2, '0')}/${(m.getMonth() + 1).toString().padStart(2, '0')}/${m.getFullYear()} ${m.getHours().toString().padStart(2, '0')}:${m.getMinutes().toString().padStart(2, '0')}:${m.getSeconds().toString().padStart(2, '0')}`;
+				const now = new Date();
+				const dateString = `${days[now.getDay()]} ${now.getDate().toString().padStart(2, '0')}/${(now.getMonth() + 1).toString().padStart(2, '0')}/${now.getFullYear()} ${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}:${now.getSeconds().toString().padStart(2, '0')}`;
 				document.getElementById('codes').textContent = dateString;
 				setTimeout(updateClock, 1000);
 			}

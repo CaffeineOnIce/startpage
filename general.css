@@ -7,7 +7,6 @@ body {
   font-family: 'Iosevka', monospace;
   font-size: 20px;
   background-color: #0F0F12;
-  background-image: url("img/");
   background-repeat: repeat;
   width: 670px;
   height: 320px;
@@ -25,13 +24,11 @@ h1 {
   text-align: center;
 }
 
-.flair {
-  color: #0972D6;
-}
+.flair { color: #0972D6; }
 
 .main {
   display: inline-block;
-  border: 1px solid #232328;
+  border: 5px solid #18181D;
   position: relative;
   top: -100px;
   width: 770px;
@@ -43,22 +40,14 @@ h1 {
 }
 
 .image-wrapper {
-  border: 1px solid #232328;
+  border: 5px solid #18181D;
   position: absolute;
-  top: -1px;
+  top: -5px;
   width: 300px;
   height: 600px;
   left: 770px;
   background-color: #18181D;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-img {
-  top: -1px;
-  width: 300px;
-  height: 600px;
+  background: center / cover no-repeat;
 }
 
 .next {
@@ -67,27 +56,24 @@ img {
   top: 575px;
   right: 10px;
   padding: 5px;
-  margin-top: -22px;
   color: white;
   font-weight: bold;
   font-size: 30px;
   border-radius: 50%;
-  transition: 0.6s ease;
+  transition: color 0.6s ease; /* Simplified transition property */
   user-select: none;
 }
 
-.fade {
-  animation: fade 1.5s;
+img {
+  width: 300px;
+  height: 600px;
 }
 
-@keyframes fade {
-  from {
-    opacity: .4;
-  }
+.fade { animation: fade 1.5s; }
 
-  to {
-    opacity: 1;
-  }
+@keyframes fade {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
 }
 
 .codes {
@@ -99,13 +85,10 @@ img {
   left: 12px;
 }
 
-li {
-  margin: 10px 0;
-}
+li { margin: 10px 0; }
 
 nav {
   display: inline-block;
-  vertical-align: middle;
   color: #BFBFBF;
   font-size: 20px;
   text-align: center;
@@ -123,36 +106,23 @@ ul {
   cursor: default;
 }
 
-ul:last-of-type {
-  border-right: none;
-}
+ul:last-of-type { border-right: none; }
+ul:hover { color: #FFFFFF; }
+ul > li:first-of-type { padding-top: 5px; }
 
-ul:hover {
-  color: #FFFFFF;
-}
-
-ul>li:first-of-type {
-  padding-top: 5px;
-}
-
-ul>li>a {
+ul > li > a {
   text-decoration: none;
   color: #9b9b9b;
   transition: color 0.8s;
 }
 
-ul.green>li>a:hover {
-  color: #4FAE0F;
-}
+ul.green > li > a:hover { color: #4FAE0F; }
+ul.blue > li > a:hover { color: #0972D6; }
+ul.red > li > a:hover { color: #ed3434; }
+ul.yellow > li > a:hover { color: #edd934; }
 
-ul.blue>li>a:hover {
-  color: #0972D6;
-}
-
-ul.red>li>a:hover {
-  color: #ed3434;
-}
-
-ul.yellow>li>a:hover {
-  color: #edd934;
+.nav-title {
+  font-size: 22px;
+  font-weight: bold;
+  cursor: default;
 }
