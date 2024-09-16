@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Iosevka';
-  src: url('Iosevka.ttf');
+  src: url('assets/Iosevka.ttf');
 }
 
 body {
@@ -81,8 +81,13 @@ img {
 }
 
 @keyframes fade {
-  from { opacity: .4; }
-  to { opacity: 1; }
+  from {
+    opacity: .4;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .codes {
@@ -94,7 +99,9 @@ img {
   left: 12px;
 }
 
-li { margin: 10px 0; }
+li {
+  margin: 10px 0;
+}
 
 nav {
   display: inline-block;
@@ -116,19 +123,36 @@ ul {
   cursor: default;
 }
 
-ul:last-of-type { border-right: none; }
+ul:last-of-type {
+  border-right: none;
+}
 
-ul:hover { color: #FFFFFF; }
+ul:hover {
+  color: #FFFFFF;
+}
 
-ul > li:first-of-type { padding-top: 5px; }
+ul>li:first-of-type {
+  padding-top: 5px;
+}
 
-ul > li > a {
+ul>li>a {
   text-decoration: none;
   color: #adadad;
   transition: color 0.8s;
 }
 
-ul.green > li > a:hover { color: #4FAE0F; }
-ul.blue > li > a:hover { color: #0972D6; }
-ul.red > li > a:hover { color: #ed3434; }
-ul.yellow > li > a:hover { color: #edd934; }
+ul.green>li>a:hover {
+  color: #4FAE0F;
+}
+
+ul.blue>li>a:hover {
+  color: #0972D6;
+}
+
+ul.red>li>a:hover {
+  color: #ed3434;
+}
+
+ul.yellow>li>a:hover {
+  color: #edd934;
+}
