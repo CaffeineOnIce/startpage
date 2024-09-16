@@ -66,16 +66,9 @@
 			const slideshow = document.getElementById('slideshow');
 			const dots = document.getElementById('dots');
 
-			images.forEach((img, index) => {
-				const slide = document.createElement('div');
-				slide.className = 'mySlides fade';
-				slide.innerHTML = `<img src="${imagePath}${img}" alt="Slide ${index + 1}" style="cursor:pointer;" onclick="changeSlide(1)">`;
-				slideshow.appendChild(slide);
-
-				const dot = document.createElement('span');
-				dot.className = 'reqdVar';
-				dot.onclick = () => setSlide(index + 1);
-				dots.appendChild(dot);
+			images.forEach((img, i) => {
+				slideshow.innerHTML += `<div class="mySlides fade"><img src="${imagePath}${img}" alt="Slide ${i + 1}" style="cursor:pointer;" onclick="changeSlide(1)"></div>`;
+				dots.innerHTML += `<span class="reqdVar" onclick="setSlide(${i + 1})"></span>`;
 			});
 
 			function changeSlide(n) {
@@ -85,22 +78,18 @@
 			function setSlide(n) {
 				const slides = document.getElementsByClassName("mySlides");
 				const dots = document.getElementsByClassName("reqdVar");
-
 				slideIndex = (n > slides.length) ? 1 : (n < 1) ? slides.length : n;
-
-				Array.from(slides).forEach(slide => slide.style.display = "none");
-				Array.from(dots).forEach(dot => dot.classList.remove("active"));
-
+				[...slides].forEach(s => s.style.display = "none");
+				[...dots].forEach(d => d.classList.remove("active"));
 				slides[slideIndex - 1].style.display = "block";
 				dots[slideIndex - 1].classList.add("active");
-
 				localStorage.setItem('slideIndex', slideIndex);
 			}
 
 			function updateClock() {
-				const days = ['SUNDAY', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY'];
 				const now = new Date();
-				const dateString = `${days[now.getDay()]} ${now.getDate().toString().padStart(2, '0')}/${(now.getMonth() + 1).toString().padStart(2, '0')}/${now.getFullYear()} ${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}:${now.getSeconds().toString().padStart(2, '0')}`;
+				const days = ['SUNDAY', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY'];
+				const dateString = `${days[now.getDay()]} ${now.toLocaleDateString()} ${now.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', second: '2-digit' })}`;
 				document.getElementById('codes').textContent = dateString;
 				setTimeout(updateClock, 1000);
 			}
