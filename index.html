@@ -68,57 +68,51 @@
 				'side16.gif', 'side17.gif', 'side18.gif', 'side19.gif', 'side20.gif',
 				'side21.gif', 'side22.gif', 'side23.gif'
 			];
-
+		
 			const slideshow = document.getElementById('slideshow');
 			const dots = document.getElementById('dots');
-
+			let slideIndex = Number(localStorage.getItem('slideIndex') || 1);
+		
 			images.forEach((img, index) => {
 				const slide = document.createElement('div');
 				slide.className = 'mySlides fade';
-				slide.innerHTML = `<a onclick="plusSlides(1)"><img src="${imagePath}${img}" alt="Slide ${index + 1}" style="cursor:pointer;"></a>`;
+				slide.innerHTML = `<a onclick="changeSlide(1)"><img src="${imagePath}${img}" alt="Slide ${index + 1}" style="cursor:pointer;"></a>`;
 				slideshow.appendChild(slide);
-
+		
 				const dot = document.createElement('span');
 				dot.className = 'reqdVar';
-				dot.setAttribute('onclick', `currentSlide(${index + 1})`);
+				dot.onclick = () => setSlide(index + 1);
 				dots.appendChild(dot);
 			});
-
-			let slideIndex = Number(localStorage.getItem('slideIndex') || 1);
-			showSlides(slideIndex);
-
-			function plusSlides(n) {
-				showSlides(slideIndex += n);
-				localStorage.setItem('slideIndex', slideIndex);
+		
+			function changeSlide(n) {
+				setSlide(slideIndex += n);
 			}
-
-			function currentSlide(n) {
-				showSlides(slideIndex = n);
-				localStorage.setItem('slideIndex', slideIndex);
-			}
-
-			function showSlides(n) {
+		
+			function setSlide(n) {
 				const slides = document.getElementsByClassName("mySlides");
-				const reqdVars = document.getElementsByClassName("reqdVar");
-
-				if (n > slides.length) slideIndex = 1;
-				if (n < 1) slideIndex = slides.length;
-
+				const dots = document.getElementsByClassName("reqdVar");
+		
+				slideIndex = (n > slides.length) ? 1 : (n < 1) ? slides.length : n;
+		
 				Array.from(slides).forEach(slide => slide.style.display = "none");
-				Array.from(reqdVars).forEach(dot => dot.className = dot.className.replace(" active", ""));
-
+				Array.from(dots).forEach(dot => dot.classList.remove("active"));
+		
 				slides[slideIndex - 1].style.display = "block";
-				reqdVars[slideIndex - 1].className += " active";
+				dots[slideIndex - 1].classList.add("active");
+		
+				localStorage.setItem('slideIndex', slideIndex);
 			}
-
+		
 			function updateClock() {
 				const days = ['SUNDAY', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY'];
 				const m = new Date();
-				const dateString = `${days[m.getDay()]} ${("0" + m.getDate()).slice(-2)}/${("0" + (m.getMonth() + 1)).slice(-2)}/${m.getFullYear()} ${("0" + m.getHours()).slice(-2)}:${("0" + m.getMinutes()).slice(-2)}:${("0" + m.getSeconds()).slice(-2)}`;
-				document.getElementById('codes').innerHTML = dateString;
+				const dateString = `${days[m.getDay()]} ${m.getDate().toString().padStart(2, '0')}/${(m.getMonth() + 1).toString().padStart(2, '0')}/${m.getFullYear()} ${m.getHours().toString().padStart(2, '0')}:${m.getMinutes().toString().padStart(2, '0')}:${m.getSeconds().toString().padStart(2, '0')}`;
+				document.getElementById('codes').textContent = dateString;
 				setTimeout(updateClock, 1000);
 			}
-
+		
+			setSlide(slideIndex);
 			updateClock();
 		</script>
 	</div>
