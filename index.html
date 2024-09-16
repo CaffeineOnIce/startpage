@@ -24,7 +24,7 @@
 		<br>
 		<nav>
 			<ul class="blue">
-				<a style="font-size:22px">Social</a>
+				<a style="font-size:22px;font-weight: bold;">Social</a>
 				<li><a href="https://www.facebook.com/">Facebook</a></li>
 				<li><a href="https://www.youtube.com/">YouTube</a></li>
 				<li><a href="https://www.reddit.com/">Reddit</a></li>
@@ -32,7 +32,7 @@
 			</ul>
 
 			<ul class="red">
-				<a style="font-size:22px">Anime</a>
+				<a style="font-size:22px;font-weight: bold;">Anime</a>
 				<li><a href="https://anitaku.pe/home.html">Gogoanime</a></li>
 				<li><a href="https://www.animegg.org/">AnimeGG</a></li>
 				<li><a href="https://myanimelist.net/">MyAnimeList</a></li>
@@ -40,7 +40,7 @@
 			</ul>
 
 			<ul class="green">
-				<a style="font-size:22px">Pirate</a>
+				<a style="font-size:22px;font-weight: bold;">Pirate</a>
 				<li><a href="https://www.bitsearch.to/">Bitsearch</a></li>
 				<li><a href="https://torrentbay.st/">Torrent Bay</a></li>
 				<li><a href="https://yts.torrentbay.st/">YTS</a></li>
@@ -48,12 +48,11 @@
 			</ul>
 
 			<ul class="yellow">
-				<a style="font-size:22px">Misc</a>
-				<li><a href="https://amazon.in">Amazon</a></li>
+				<a style="font-size:22px;font-weight: bold;">Misc</a>
+				<li><a href="https://drive.filen.io/">Filen</a></li>
 				<li><a href="https://github.com/">Github</a></li>
+				<li><a href="https://amazon.in">Amazon</a></li>
 				<li><a href="https://gmail.com/">Gmail</a></li>
-				<li><a href="https://drive.google.com/drive/home">Drive</a></li>
-				<li><a href="https://meet.google.com/">G-Meet</a></li>
 			</ul>
 		</nav>
 
@@ -68,42 +67,42 @@
 				'side16.gif', 'side17.gif', 'side18.gif', 'side19.gif', 'side20.gif',
 				'side21.gif', 'side22.gif', 'side23.gif'
 			];
-		
+
 			const slideshow = document.getElementById('slideshow');
 			const dots = document.getElementById('dots');
 			let slideIndex = Number(localStorage.getItem('slideIndex') || 1);
-		
+
 			images.forEach((img, index) => {
 				const slide = document.createElement('div');
 				slide.className = 'mySlides fade';
 				slide.innerHTML = `<a onclick="changeSlide(1)"><img src="${imagePath}${img}" alt="Slide ${index + 1}" style="cursor:pointer;"></a>`;
 				slideshow.appendChild(slide);
-		
+
 				const dot = document.createElement('span');
 				dot.className = 'reqdVar';
 				dot.onclick = () => setSlide(index + 1);
 				dots.appendChild(dot);
 			});
-		
+
 			function changeSlide(n) {
 				setSlide(slideIndex += n);
 			}
-		
+
 			function setSlide(n) {
 				const slides = document.getElementsByClassName("mySlides");
 				const dots = document.getElementsByClassName("reqdVar");
-		
+
 				slideIndex = (n > slides.length) ? 1 : (n < 1) ? slides.length : n;
-		
+
 				Array.from(slides).forEach(slide => slide.style.display = "none");
 				Array.from(dots).forEach(dot => dot.classList.remove("active"));
-		
+
 				slides[slideIndex - 1].style.display = "block";
 				dots[slideIndex - 1].classList.add("active");
-		
+
 				localStorage.setItem('slideIndex', slideIndex);
 			}
-		
+
 			function updateClock() {
 				const days = ['SUNDAY', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY'];
 				const m = new Date();
@@ -111,7 +110,7 @@
 				document.getElementById('codes').textContent = dateString;
 				setTimeout(updateClock, 1000);
 			}
-		
+
 			setSlide(slideIndex);
 			updateClock();
 		</script>
