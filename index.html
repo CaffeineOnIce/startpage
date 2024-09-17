@@ -88,8 +88,8 @@
 
 			function updateClock() {
 				const now = new Date();
-				const days = ['SUNDAY', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY'];
-				const dateString = `${days[now.getDay()]} ${now.toLocaleDateString()} ${now.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', second: '2-digit' })}`;
+				const day = now.toLocaleDateString('en-GB', { weekday: 'long' }).toUpperCase();
+				const dateString = `${day} ${now.toLocaleDateString()} ${now.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', second: '2-digit' })}`;
 				document.getElementById('codes').textContent = dateString;
 				setTimeout(updateClock, 1000);
 			}
