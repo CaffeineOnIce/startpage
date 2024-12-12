@@ -61,7 +61,8 @@
 
 		<script>
 			const imagePath = 'assets/';
-			const images = Array.from({ length: 23 }, (_, i) => `side${i + 1}.gif`);
+			const len = 23;
+			const images = Array.from({ length: len }, (_, i) => `side${i + 1}.gif`);
 			let slideIndex = Number(localStorage.getItem('slideIndex')) || 1;
 
 			const slideshow = document.getElementById('slideshow');

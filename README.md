@@ -5,9 +5,6 @@ A startpage that meets my needs.
 
 ### Live Demo: <a href="https://caffeineonice.github.io/startpage/">Demo</a>
 
-### Default Home
-<img src="home.png" alt="Home" width="100%"/>
-
 ### Preview
 <img src="home.gif" alt="Preview" width="100%"/>
 
