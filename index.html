@@ -1,22 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- HTML comments suck -->
-
 <head>
 	<meta charset="utf-8">
 	<title>~</title>
 	<link rel="icon" type="image/x-icon" href="assets/favicon.svg">
 	<link rel="stylesheet" href="general.css">
 </head>
-
 <body>
 	<div class="main">
 		<div class="image-wrapper">
 			<div id="slideshow"></div>
 		</div>
 		<br>
-		<div id="dots" style="text-align:center"></div>
-
+		<div id="dots"></div>
 		<header>
 			<br>
 			<h1>おかえりなさいませ, <span class="flair">X A M P</span></h1>
@@ -31,7 +27,6 @@
 				<li><a href="https://www.reddit.com/">Reddit</a></li>
 				<li><a href="https://www.x.com/">X</a></li>
 			</ul>
-
 			<ul class="red">
 				<a class="nav-title">Anime</a>
 				<li><a href="https://anitaku.pe/home.html">Gogoanime</a></li>
@@ -39,7 +34,6 @@
 				<li><a href="https://myanimelist.net/">MyAnimeList</a></li>
 				<li><a href="https://nyaa.si/">Nyaa</a></li>
 			</ul>
-
 			<ul class="green">
 				<a class="nav-title">Pirate</a>
 				<li><a href="https://www.bitsearch.to/">Bitsearch</a></li>
@@ -47,7 +41,6 @@
 				<li><a href="https://yts.torrentbay.st/">YTS</a></li>
 				<li><a href="https://filecr.com/">FileCR</a></li>
 			</ul>
-
 			<ul class="yellow">
 				<a class="nav-title">Misc</a>
 				<li><a href="https://chat.deepseek.com/">Deepseek</a></li>
@@ -56,39 +49,29 @@
 				<li><a href="https://gmail.com/">Gmail</a></li>
 			</ul>
 		</nav>
-
 		<div class="codes" id="codes"></div>
-
 		<script>
 			const imagePath = 'assets/';
 			const len = 23;
 			const images = Array.from({ length: len }, (_, i) => `side${i + 1}.gif`);
 			let slideIndex = Number(localStorage.getItem('slideIndex')) || 1;
-
 			const slideshow = document.getElementById('slideshow');
 			const dots = document.getElementById('dots');
-
 			images.forEach((img, i) => {
 				slideshow.innerHTML += `<div class="mySlides fade"><img src="${imagePath}${img}" alt="Slide ${i + 1}" style="cursor:pointer;" onclick="changeSlide(1)"></div>`;
 				dots.innerHTML += `<span class="reqdVar" onclick="setSlide(${i + 1})"></span>`;
 			});
-
 			function changeSlide(n) {
-				setSlide(slideIndex += n);
+				setSlide(slideIndex + n);
 			}
-
-			//a whole lot of bullshit here
 			function setSlide(n) {
 				const slides = document.getElementsByClassName("mySlides");
 				const dots = document.getElementsByClassName("reqdVar");
 				slideIndex = (n > slides.length) ? 1 : (n < 1) ? slides.length : n;
-				[...slides].forEach(s => s.style.display = "none");
-				[...dots].forEach(d => d.classList.remove("active"));
-				slides[slideIndex - 1].style.display = "block";
-				dots[slideIndex - 1].classList.add("active");
+				[...slides].forEach((s, i) => s.style.display = i === slideIndex - 1 ? "block" : "none");
+				[...dots].forEach((d, i) => d.classList.toggle("active", i === slideIndex - 1));
 				localStorage.setItem('slideIndex', slideIndex);
 			}
-
 			function updateClock() {
 				const now = new Date();
 				const day = now.toLocaleDateString('en-GB', { weekday: 'long' }).toUpperCase();
@@ -96,11 +79,9 @@
 				document.getElementById('codes').textContent = dateString;
 				setTimeout(updateClock, 1000);
 			}
-
 			setSlide(slideIndex);
 			updateClock();
 		</script>
 	</div>
 </body>
-
 </html>
