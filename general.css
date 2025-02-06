@@ -24,7 +24,8 @@ h1 {
   text-align: center;
 }
 
-#dots, .main {
+#dots,
+.main {
   text-align: center;
 }
 
@@ -64,8 +65,13 @@ img {
 }
 
 @keyframes fade {
-  from { opacity: 0.4; }
-  to { opacity: 1; }
+  from {
+    opacity: 0.4;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .codes {
@@ -106,20 +112,31 @@ li {
   margin: 10px 0;
 }
 
-ul > li:first-of-type {
+ul>li:first-of-type {
   padding-top: 5px;
 }
 
-ul > li > a {
+ul>li>a {
   text-decoration: none;
   color: #9b9b9b;
   transition: color 0.8s;
 }
 
-ul.green > li > a:hover { color: #4FAE0F; }
-ul.blue > li > a:hover { color: #0972D6; }
-ul.red > li > a:hover { color: #ed3434; }
-ul.yellow > li > a:hover { color: #edd934; }
+ul.green>li>a:hover {
+  color: #4FAE0F;
+}
+
+ul.blue>li>a:hover {
+  color: #0972D6;
+}
+
+ul.red>li>a:hover {
+  color: #ed3434;
+}
+
+ul.yellow>li>a:hover {
+  color: #edd934;
+}
 
 .nav-title {
   font-size: 22px;
