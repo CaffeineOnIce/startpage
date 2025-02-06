@@ -37,10 +37,10 @@ h1 {
   display: inline-block;
   border: 5px solid #18181D;
   position: relative;
-  top: -100px;
+  bottom: 35%;
   width: 770px;
   height: 600px;
-  left: -200px;
+  right: 30%;
   margin: auto;
   background-color: #18181D;
 }
