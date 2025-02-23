@@ -39,7 +39,7 @@ h1 {
   border: 5px solid #18181D;
 }
 
-.data-wrapper {
+#data-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
