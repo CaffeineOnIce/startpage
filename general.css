@@ -4,29 +4,24 @@
 }
 
 body {
-  font-family: 'Iosevka', monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Iosevka';
   font-size: 20px;
   background-color: #0F0F12;
-  width: 670px;
-  height: 320px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 100px;
-  margin: auto;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 h1 {
-  font-weight: normal;
   color: #FEFFFA;
+  font-weight: normal;
   text-align: center;
-}
-
-#dots,
-.main {
-  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  margin-top: -30px;
 }
 
 .flair {
@@ -34,53 +29,35 @@ h1 {
 }
 
 .main {
-  display: inline-block;
-  border: 5px solid #18181D;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
-  bottom: 30%;
-  width: 770px;
-  height: 600px;
-  right: 31%;
-  margin: auto;
+  text-align: center;
+  font-family: 'Iosevka';
   background-color: #18181D;
+  border: 5px solid #18181D;
 }
 
-.image-wrapper {
-  border: 5px solid #18181D;
-  position: absolute;
-  top: -5px;
-  left: 770px;
+#slideshow {
   width: 300px;
   height: 600px;
   background: #18181D center / cover no-repeat;
 }
 
-img {
-  width: 300px;
+#slideshow img {
+  width: 100%;
   height: 600px;
+  object-fit: cover;
 }
 
-.fade {
-  animation: fade 1.5s;
-}
-
-@keyframes fade {
-  from {
-    opacity: 0.4;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-.codes {
-  color: #FFFFFF;
-  font-family: 'Iosevka', monospace;
-  font-size: 18px;
-  position: absolute;
-  top: 565px;
-  left: 12px;
+.data-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 770px;
+  height: 600px;
 }
 
 nav {
@@ -142,4 +119,17 @@ ul.yellow>li>a:hover {
   font-size: 22px;
   font-weight: bold;
   cursor: default;
+}
+
+.codes {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 5px;
+  color: white;
+}
+
+.mySlides {
+  position: absolute;
+  opacity: 0;
 }
