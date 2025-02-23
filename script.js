@@ -2,7 +2,21 @@
 const imagePath = 'assets/';
 const len = 23;
 const images = Array.from({ length: len }, (_, i) => `side${i + 1}.gif`);
-let slideIndex = Number(localStorage.getItem('slideIndex')) || 1;
+
+// Function to generate a seed based on the current date
+function getSeed() {
+	const now = new Date();
+	return now.getFullYear() * 10000 + (now.getMonth() + 1) * 100 + now.getDate();
+}
+
+// Seeded random number generator
+function seededRandom(seed) {
+	const x = Math.sin(seed) * 10000;
+	return x - Math.floor(x);
+}
+
+const seed = getSeed();
+let slideIndex = Math.floor(seededRandom(seed) * len) + 1; // Set a seeded random slide index
 const slideshow = document.getElementById('slideshow');
 
 images.forEach((img, i) => {
