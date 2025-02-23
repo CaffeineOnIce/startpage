@@ -18,7 +18,7 @@ function setSlide(n) {
 	slideIndex = (n > slides.length) ? 1 : (n < 1) ? slides.length : n;
 	[...slides].forEach((s, i) => {
 		s.style.opacity = i === slideIndex - 1 ? "1" : "0";
-		s.style.transition = "opacity .5s";
+		s.style.transition = "opacity .7s";
 	});
 	localStorage.setItem('slideIndex', slideIndex);
 }
