@@ -15,8 +15,16 @@ function seededRandom(seed) {
 	return x - Math.floor(x);
 }
 
-const seed = getSeed();
-let slideIndex = Math.floor(seededRandom(seed) * len) + 1; // Set a seeded random slide index
+// Check if a slide index is stored in localStorage
+let slideIndex = localStorage.getItem('slideIndex');
+if (!slideIndex) {
+	const seed = getSeed();
+	slideIndex = Math.floor(seededRandom(seed) * len) + 1; // Set a seeded random slide index
+	localStorage.setItem('slideIndex', slideIndex);
+} else {
+	slideIndex = parseInt(slideIndex, 10);
+}
+
 const slideshow = document.getElementById('slideshow');
 
 images.forEach((img, i) => {
