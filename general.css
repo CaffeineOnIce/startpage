@@ -62,7 +62,7 @@ h1 {
 
 nav {
   display: inline-block;
-  color: #BFBFBF;
+  color: #999999;
   font-size: 20px;
   margin: 0 auto;
 }
@@ -81,10 +81,6 @@ ul:last-of-type {
   border-right: none;
 }
 
-ul:hover {
-  color: #FFFFFF;
-}
-
 li {
   margin: 10px 0;
 }
@@ -95,23 +91,27 @@ ul>li:first-of-type {
 
 ul>li>a {
   text-decoration: none;
-  color: #9b9b9b;
+  color: #858585;
   transition: color 0.8s;
 }
 
-ul.green>li>a:hover {
+ul>li>a:hover {
+  color: white;
+}
+
+ul.green:hover {
   color: #4FAE0F;
 }
 
-ul.blue>li>a:hover {
+ul.blue:hover {
   color: #0972D6;
 }
 
-ul.red>li>a:hover {
+ul.red:hover {
   color: #ed3434;
 }
 
-ul.yellow>li>a:hover {
+ul.yellow:hover {
   color: #edd934;
 }
 
@@ -125,7 +125,7 @@ ul.yellow>li>a:hover {
   position: absolute;
   bottom: 0;
   left: 0;
-  padding: 5px;
+  padding: 8px;
   color: white;
 }
 
