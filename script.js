@@ -25,7 +25,7 @@ function setSlide(n) {
 
 function updateClock() {
 	const now = new Date();
-	const day = now.toLocaleDateString('en-GB', { weekday: 'long' }).toUpperCase();
+	const day = now.toLocaleDateString('en-GB', { weekday: 'long' }).charAt(0).toUpperCase() + now.toLocaleDateString('en-GB', { weekday: 'long' }).slice(1).toLowerCase();
 	const dateString = `${day} ${now.toLocaleDateString()} ${now.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', second: '2-digit' })}`;
 	document.getElementById('codes').textContent = dateString;
 	setTimeout(updateClock, 1000);
