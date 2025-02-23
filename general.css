@@ -11,7 +11,7 @@ body {
   margin: 0;
   font-family: 'Iosevka';
   font-size: 20px;
-  background-color: #0F0F12;
+  background-color: #111111;
   overflow: hidden;
 }
 
@@ -35,7 +35,7 @@ h1 {
   position: relative;
   text-align: center;
   font-family: 'Iosevka';
-  background-color: #18181D;
+  background-color: #181818;
   border: 5px solid #18181D;
 }
 
