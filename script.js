@@ -1,4 +1,4 @@
-// Image Slideshow
+// Slideshow
 const imagePath = 'assets/';
 const len = 23;
 const images = Array.from({ length: len }, (_, i) => `side${i + 1}.gif`);
@@ -13,17 +13,29 @@ function seededRandom(seed) {
 	return x - Math.floor(x);
 }
 
-let slideIndex = localStorage.getItem('slideIndex');
-if (!slideIndex) {
+function getDailyDefaultSlideIndex() {
 	const seed = getSeed();
-	slideIndex = Math.floor(seededRandom(seed) * len) + 1;
+	return Math.floor(seededRandom(seed) * len) + 1;
+}
+
+let slideIndex = localStorage.getItem('slideIndex');
+const dailyDefaultSlideIndex = getDailyDefaultSlideIndex();
+
+if (!slideIndex) {
+	slideIndex = dailyDefaultSlideIndex;
 	localStorage.setItem('slideIndex', slideIndex);
 } else {
 	slideIndex = parseInt(slideIndex, 10);
+	const lastAccessedDate = localStorage.getItem('lastAccessedDate');
+	const currentDate = new Date().toDateString();
+	if (lastAccessedDate !== currentDate) {
+		slideIndex = dailyDefaultSlideIndex;
+		localStorage.setItem('slideIndex', slideIndex);
+	}
 }
 
+localStorage.setItem('lastAccessedDate', new Date().toDateString());
 const slideshow = document.getElementById('slideshow');
-
 images.forEach((img, i) => {
 	slideshow.innerHTML += `<div class="mySlides"><img src="${imagePath}${img}" style="cursor:pointer;" onclick="changeSlide(1)"></div>`;
 });
@@ -41,25 +53,22 @@ function setSlide(n) {
 	});
 	localStorage.setItem('slideIndex', slideIndex);
 }
+
 setSlide(slideIndex);
 
-// 	Time and Date 
+// Clock
 function updateClock() {
 	const now = new Date();
-	const dateString = now.toLocaleString('en-GB', {
-		weekday: 'long',
-		day: '2-digit',
-		month: '2-digit',
-		year: 'numeric',
-		hour: '2-digit',
-		minute: '2-digit',
-		second: '2-digit'
-	}).replace(/,/g, '');
+	const day = now.toLocaleDateString('en-GB', { weekday: 'long' });
+	const dayOfMonth = String(now.getDate()).padStart(2, '0');
+	const month = String(now.getMonth() + 1).padStart(2, '0');
+	const year = now.getFullYear();
+	const time = now.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+	const dateString = `${day.charAt(0).toUpperCase() + day.slice(1).toLowerCase()} ${dayOfMonth}-${month}-${year} ${time}`;
 	document.getElementById('codes').textContent = dateString;
 	setTimeout(updateClock, 1000);
 }
 updateClock();
-
 
 // Background Animation
 const canvasBody = document.getElementById("canvas");
