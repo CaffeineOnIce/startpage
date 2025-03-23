@@ -92,8 +92,9 @@ ul.yellow:hover {
   position: relative;
   text-align: center;
   font-family: 'Iosevka';
-  background-color: #181818;
-  border: 5px solid #18181D;
+  background-color: #1b1b1b;
+  border: 10px solid #1b1b1b;
+  border-radius: 10px;
 }
 
 .mySlides {
@@ -117,13 +118,14 @@ ul.yellow:hover {
 #slideshow {
   width: 300px;
   height: 600px;
-  background: #18181D center / cover no-repeat;
+  background: #1b1b1b center / cover no-repeat;
 }
 
 #slideshow img {
   width: 100%;
   height: 600px;
   object-fit: cover;
+  border-radius: 10px;
 }
 
 #codes {
