@@ -1,6 +1,6 @@
 // Slideshow
 const imagePath = 'assets/';
-const len = 23;
+const len = 33;
 const images = Array.from({ length: len }, (_, i) => `side${i + 1}.gif`);
 
 function getSeed() {
